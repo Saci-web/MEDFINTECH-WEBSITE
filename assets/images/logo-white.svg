@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 52" fill="none" role="img" aria-label="MEDFINTECH">
+  <defs>
+    <linearGradient id="lw1" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a56db"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="lw2" x1="118" y1="8" x2="240" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="6" width="40" height="40" rx="11" fill="url(#lw1)"/>
+  <path d="M22 18 Q14 26 22 34 Q30 26 22 18Z" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <circle cx="22" cy="26" r="3" fill="#fff"/>
+  <path d="M30 20 L36 24 L30 28" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".9"/>
+  <circle cx="34" cy="18" r="1.2" fill="#a5f3fc"/>
+  <circle cx="36" cy="30" r="1.2" fill="#a5f3fc"/>
+  <text x="56" y="33" font-family="Syne, Plus Jakarta Sans, system-ui, sans-serif" font-size="22" font-weight="800" fill="#ffffff" letter-spacing="-0.5">MED</text>
+  <text x="118" y="33" font-family="Syne, Plus Jakarta Sans, system-ui, sans-serif" font-size="22" font-weight="800" fill="url(#lw2)" letter-spacing="-0.5">FINTECH</text>
+  <text x="56" y="46" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="7.5" font-weight="600" fill="rgba(255,255,255,0.45)" letter-spacing="2.2">DIGITAL HEALTH · VISION</text>
+</svg>

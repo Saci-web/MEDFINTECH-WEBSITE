@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" fill="none">
+  <rect width="1200" height="720" fill="#f8fafc"/>
+  <rect width="220" height="720" fill="#0f172a"/>
+  <text x="24" y="36" font-family="system-ui,sans-serif" font-size="16" font-weight="800" fill="#fff">EyeTech</text>
+  <rect x="12" y="160" width="196" height="36" rx="8" fill="#1a56db"/>
+  <text x="44" y="183" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#fff">Agenda</text>
+  <rect x="12" y="204" width="196" height="36" rx="8" fill="#1e293b"/>
+  <text x="44" y="227" font-family="system-ui,sans-serif" font-size="13" fill="#94a3b8">File d'attente</text>
+  <text x="252" y="44" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#0f172a">Agenda &amp; File d'attente</text>
+  <rect x="252" y="68" width="520" height="320" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="480" y="100" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f172a">Juin 2026</text>
+  <rect x="460" y="144" width="56" height="56" rx="8" fill="#eff6ff" stroke="#1a56db" stroke-width="2"/>
+  <text x="482" y="180" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1a56db">9</text>
+  <rect x="792" y="68" width="368" height="320" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="816" y="100" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#0f172a">File d'attente - Temps reel</text>
+  <circle cx="830" cy="118" r="5" fill="#22c55e"/>
+  <rect x="816" y="132" width="320" height="52" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="832" y="162" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#92400e">#047 - BENALI Ahmed - Salle 3</text>
+  <rect x="252" y="408" width="908" height="280" rx="12" fill="#0f172a"/>
+  <text x="276" y="444" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#06b6d4">Ecran Salle d'Attente TV</text>
+  <text x="300" y="520" font-family="system-ui,sans-serif" font-size="28" font-weight="800" fill="#fbbf24">#047 BENALI Ahmed</text>
+</svg>
