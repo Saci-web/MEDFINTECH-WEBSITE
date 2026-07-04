@@ -170,12 +170,12 @@
     </div>
     <div class="product-layout">
       <div class="product-features reveal">
-        <div class="pf-item"><div class="pf-num">01</div><div><strong data-i18n="product.f1t">Dossiers patients</strong><p data-i18n="product.f1d">Dossiers numériques complets avec historique réfractif, imagerie, allergies et chirurgie.</p></div></div>
-        <div class="pf-item"><div class="pf-num">02</div><div><strong data-i18n="product.f2t">Ordonnances intelligentes</strong><p data-i18n="product.f2d">Prescriptions optiques auto-calculées pour lunettes et lentilles.</p></div></div>
-        <div class="pf-item"><div class="pf-num">03</div><div><strong data-i18n="product.f3t">Facturation conventions</strong><p data-i18n="product.f3d">Répartition automatique assurance (CNAS, CASNOS, Militaire).</p></div></div>
+        <div class="pf-item"><div class="pf-num">01</div><div><strong data-i18n="product.f1t">Dossiers patients</strong><p data-i18n="product.f1d">Dossiers numériques complets avec historique consultations.</p></div></div>
+        <div class="pf-item"><div class="pf-num">02</div><div><strong data-i18n="product.f2t">Ordonnances intelligentes</strong><p data-i18n="product.f2d">Prescriptions optiques auto-calculées par IA.</p></div></div>
+        <div class="pf-item"><div class="pf-num">03</div><div><strong data-i18n="product.f3t">Facturation conventions</strong><p data-i18n="product.f3d">Répartition automatique assurance (CNAS, CASNOS).</p></div></div>
         <div class="pf-item"><div class="pf-num">04</div><div><strong data-i18n="product.f4t">Intégration appareils</strong><p data-i18n="product.f4d">Import direct Nidek RT-6100, DICOM/PACS, HL7.</p></div></div>
         <div class="pf-item"><div class="pf-num">05</div><div><strong data-i18n="product.f5t">Analyse IA d'images</strong><p data-i18n="product.f5d">Analyse automatisée de fond d'œil et OCT.</p></div></div>
-        <div class="pf-item"><div class="pf-num">06</div><div><strong data-i18n="product.f6t">Comptabilité complète</strong><p data-i18n="product.f6d">Suivi revenus, dépenses, paie et tableau de bord financier.</p></div></div>
+        <div class="pf-item"><div class="pf-num">06</div><div><strong data-i18n="product.f6t">Comptabilité complète</strong><p data-i18n="product.f6d">Suivi revenus, dépenses, paie et tableau de bord.</p></div></div>
       </div>
       <div class="product-cta reveal">
         <div class="cta-card">
@@ -337,9 +337,9 @@
     <form class="contact-form reveal" id="contactForm" onsubmit="submitForm(event)">
       <h3 data-i18n="contact.formTitle">Demander une démo gratuite</h3>
       <div class="form-row">
-        <div class="form-group"><label data-i18n="contact.name">Nom complet *</label><input type="text" data-i18n-placeholder="contact.namePh" placeholder="Dr. Ahmed Benali" required></div>
+        <div class="form-group"><label data-i18n="contact.name">Nom complet *</label><input type="text" name="full_name" data-i18n-placeholder="contact.namePh" placeholder="Dr. Ahmed Benali" required></div>
         <div class="form-group"><label data-i18n="contact.specialty">Spécialité</label>
-          <select>
+          <select name="specialty">
             <option data-i18n="opt.ophthalmology">Ophtalmologie</option>
             <option data-i18n="opt.dentistry">Dentisterie</option>
             <option data-i18n="opt.cardiology">Cardiologie</option>
@@ -349,12 +349,12 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label data-i18n="contact.emailLabel">Email *</label><input type="email" data-i18n-placeholder="contact.emailPh" placeholder="docteur@clinique.com" required></div>
-        <div class="form-group"><label data-i18n="contact.phoneLabel">Téléphone / WhatsApp</label><input type="tel" data-i18n-placeholder="contact.phonePh" placeholder="+213 6X XX XX XX"></div>
+        <div class="form-group"><label data-i18n="contact.emailLabel">Email *</label><input type="email" name="email" data-i18n-placeholder="contact.emailPh" placeholder="docteur@clinique.com" required></div>
+        <div class="form-group"><label data-i18n="contact.phoneLabel">Téléphone / WhatsApp</label><input type="tel" name="phone" data-i18n-placeholder="contact.phonePh" placeholder="+213 6X XX XX XX"></div>
       </div>
       <div class="form-row">
         <div class="form-group"><label data-i18n="contact.country">Pays</label>
-          <select>
+          <select name="country">
             <option data-i18n="opt.algeria">Algérie</option>
             <option data-i18n="opt.morocco">Maroc</option>
             <option data-i18n="opt.tunisia">Tunisie</option>
@@ -364,7 +364,7 @@
           </select>
         </div>
         <div class="form-group"><label data-i18n="contact.facility">Type d'établissement</label>
-          <select>
+          <select name="facility">
             <option data-i18n="opt.clinic">Clinique privée</option>
             <option data-i18n="opt.hospital">Hôpital / CHU</option>
             <option data-i18n="opt.practice">Cabinet libéral</option>
@@ -372,9 +372,10 @@
           </select>
         </div>
       </div>
-      <div class="form-group"><label data-i18n="contact.message">Message</label><textarea rows="3" data-i18n-placeholder="contact.messagePh" placeholder="Décrivez vos besoins..."></textarea></div>
+      <div class="form-group"><label data-i18n="contact.message">Message</label><textarea rows="3" name="message" data-i18n-placeholder="contact.messagePh" placeholder="Décrivez vos besoins..."></textarea></div>
       <button type="submit" class="btn-submit" data-i18n="contact.submit">Envoyer la demande →</button>
       <div id="form-success" style="display:none" class="form-success" data-i18n="contact.success">✅ Demande envoyée !</div>
+      <div id="form-error" style="display:none" class="form-error" style="color: #ef4444; margin-top: 10px;">❌ Erreur lors de l'envoi. Veuillez réessayer.</div>
     </form>
   </div>
 </section>
@@ -396,7 +397,7 @@
     <div class="footer-links">
       <div class="footer-col"><h5 data-i18n="footer.products">Produits</h5><a href="http://med.fin-tech.com/" target="_blank" rel="noopener">EyeTech</a><a href="#products">DentaTech</a><a href="#products">CardioTech</a></div>
       <div class="footer-col"><h5 data-i18n="footer.company">Entreprise</h5><a href="#about" data-i18n="nav.about">À propos</a><a href="#contact" data-i18n="nav.demo">Contact</a></div>
-      <div class="footer-col"><h5 data-i18n="footer.tech">Technologie</h5><a href="#features" data-i18n="footer.tech1">IA clinique</a><a href="#features" data-i18n="footer.tech2">Interopérabilité</a><a href="#features" data-i18n="footer.tech3">Sécurité des données</a></div>
+      <div class="footer-col"><h5 data-i18n="footer.tech">Technologie</h5><a href="#features" data-i18n="footer.tech1">IA clinique</a><a href="#features" data-i18n="footer.tech2">Interopérabilité</a></div>
       <div class="footer-col"><h5 data-i18n="footer.legal">Légal</h5><a href="#" data-i18n="footer.privacy">Confidentialité</a><a href="#" data-i18n="footer.terms">Conditions</a></div>
     </div>
   </div>
@@ -404,6 +405,9 @@
     <p data-i18n="footer.copyright">© 2026 MEDFINTECH — Tous droits réservés</p>
   </div>
 </footer>
+
+<!-- EmailJS Library -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
 
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js"></script>
