@@ -1,3 +1,18 @@
+/* ── EmailJS Configuration ── */
+// Initialize EmailJS with your credentials
+// Get your keys at: https://dashboard.emailjs.com/admin/account
+const EMAILJS_PUBLIC_KEY = 'Ac3RnPtPJ_Dz5ysnI';
+const EMAILJS_SERVICE_ID = 'service_jh9bboc';
+const EMAILJS_TEMPLATE_ID = 'template_contact_form'; // You'll need to create this template in EmailJS
+
+// Initialize EmailJS
+(function() {
+  if (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY_HERE') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    console.log('✅ EmailJS initialized successfully');
+  }
+})();
+
 /* ── Navbar scroll ── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
@@ -138,21 +153,53 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* ── Contact form ── */
+/* ── Contact form with EmailJS ── */
 function submitForm(e) {
   e.preventDefault();
   const btn = e.target.querySelector('.btn-submit');
+  const successEl = document.getElementById('form-success');
+  const errorEl = document.getElementById('form-error');
   const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+  
+  // Hide previous messages
+  successEl.style.display = 'none';
+  if (errorEl) errorEl.style.display = 'none';
+  
+  // Show sending state
+  const originalText = btn.textContent;
   btn.textContent = t('contact.sending', lang);
   btn.disabled = true;
-  setTimeout(() => {
-    const success = document.getElementById('form-success');
-    success.style.display = 'block';
-    success.textContent = t('contact.success', lang);
-    e.target.reset();
-    btn.textContent = t('contact.submit', lang);
-    btn.disabled = false;
-  }, 1500);
+
+  // Collect form data
+  const formData = {
+    full_name: e.target.querySelector('input[name="full_name"]').value,
+    email: e.target.querySelector('input[name="email"]').value,
+    phone: e.target.querySelector('input[name="phone"]').value || 'Non fourni',
+    specialty: e.target.querySelector('select[name="specialty"]').value,
+    country: e.target.querySelector('select[name="country"]').value,
+    facility: e.target.querySelector('select[name="facility"]').value,
+    message: e.target.querySelector('textarea[name="message"]').value || 'Aucun message',
+  };
+
+  // Send email via EmailJS
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData)
+    .then(function(response) {
+      console.log('✅ Email sent successfully!', response.status, response.text);
+      successEl.style.display = 'block';
+      successEl.textContent = t('contact.success', lang);
+      e.target.reset();
+      btn.textContent = originalText;
+      btn.disabled = false;
+    })
+    .catch(function(error) {
+      console.error('❌ Failed to send email:', error);
+      if (errorEl) {
+        errorEl.style.display = 'block';
+        errorEl.textContent = '❌ ' + (lang === 'fr' ? 'Erreur lors de l\'envoi. Veuillez réessayer.' : 'Error sending. Please try again.');
+      }
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
 }
 
 /* ── Init first screen caption ── */
